@@ -4,7 +4,7 @@
 	<groupId>com.savers.utility</groupId>
 	<artifactId>intUtils</artifactId>
 	<packaging>jar</packaging>
-	<version>1.1.0.0</version>
+	<version>2.0.0.0</version>
 	<name>intUtils</name>
 	<url>http://maven.apache.org</url>
 
@@ -120,15 +120,13 @@
 	</dependencies>
 
 	<distributionManagement>
+		<!-- Location for the deployment of release artifacts -->
 		<repository>
-			<id>nexus</id>
-			<url>http://ps0-mul-mgmt01.savers.com:8082/nexus/content/repositories/Savers-Production/</url>
+		    <id>MyGet</id>
+		    <name>MyGet</name>
+		    <url>https://www.myget.org/F/savers-test/maven/</url>
 		</repository>
-		<snapshotRepository>
-			<id>nexus-snapshots</id>
-			<url>http://ps0-mul-mgmt01.savers.com:8082/nexus/content/repositories/Savers-Production/</url>
-		</snapshotRepository>
-	</distributionManagement>
+    	</distributionManagement>
 
 	<build>
 		<finalName>intutils</finalName>
@@ -218,27 +216,6 @@
 				<version>${maven-deploy-plugin.version}</version>
 				<configuration>
 					<skip>true</skip>
-				</configuration>
-			</plugin>
-
-			<!-- Setup the Nexus Plugin -->
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>${nexus-staging-maven-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>default-deploy</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<serverId>nexus</serverId>
-					<nexusUrl>http://ps0-mul-mgmt01.savers.com:8082/nexus/</nexusUrl>
-					<skipStaging>true</skipStaging>
 				</configuration>
 			</plugin>
 		</plugins>
