@@ -36,6 +36,7 @@
 			<groupId>org.mule</groupId>
 			<artifactId>mule-core</artifactId>
 			<version>${mule.version}</version>
+			<type>POM</type>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
