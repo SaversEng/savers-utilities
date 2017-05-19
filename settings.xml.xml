@@ -44,7 +44,7 @@ under the License.
            <repositories>
                 <repository>
                     <id>MyGet</id>
-                    <url>https://www.myget.org/F/savers-test/maven/</url>
+                    <url>https://www.myget.org/F/savers_maven/maven/</url>
                 </repository>
             </repositories>
         </profile>
